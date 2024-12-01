@@ -1,24 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monika Ernst - Private Webseite</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('background.jpg'); /* Hintergrundbild hier einfügen */
+            background-image: url('background.jpg'); /* Hintergrundbild */
             background-size: cover;
             background-position: center;
             color: #333;
+            line-height: 1.6;
         }
         header {
             text-align: center;
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 3px solid #ddd;
         }
         header img {
             border-radius: 50%;
@@ -26,6 +28,7 @@
             height: 150px;
             display: block;
             margin: 0 auto;
+            border: 3px solid #333;
         }
         header h1 {
             margin: 20px 0 10px;
@@ -34,12 +37,12 @@
         header p {
             margin: 0;
             font-size: 1.2em;
+            color: #555;
         }
         nav {
             display: flex;
             justify-content: center;
             background: #333;
-            color: #fff;
             padding: 10px;
         }
         nav a {
@@ -47,15 +50,18 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.1em;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #ffd700;
         }
         section {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px auto;
+            max-width: 800px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         section img {
             float: left;
@@ -63,20 +69,25 @@
             border-radius: 10px;
             width: 150px;
             height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             background: #333;
             color: #fff;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="profile.jpg" alt="Profilbild von Monika Ernst"> <!-- Profilbild hier einfügen -->
-        <h1>Willkommen auf meiner Webseite! Der Webseite von Monika Ernst</h1>
-        <p>Diese Seite bietet einen Einblick auf meine Familie und in meine Welt.</p>
+        <img src="profile.jpg" alt="Profilbild von Monika Ernst">
+        <h1>Willkommen auf meiner Webseite!</h1>
+        <p>Einblicke in das Leben von Monika Ernst und ihre Welt.</p>
     </header>
     <nav>
         <a href="#ueber-mich">Über mich</a>
@@ -84,52 +95,36 @@
         <a href="#impressum">Impressum</a>
         <a href="#datenschutz">Datenschutz</a>
     </nav>
-    <section id="ueber-mich">
-        <h2>Über mich</h2>
-        <img src="profile.jpg" alt="Profilbild von Monika Ernst">
-        <p>Natürlich! Hier ist ein schöner Text für die Webseite, der die warmherzige Persönlichkeit deiner Mutter einfängt:  
-
----
-
-**Über Meine Mutter**  
-Meine Mutter ist ein echter Familienmensch – das Herz und die Seele unseres Zuhauses. Mit ihrer liebevollen Art schafft sie es, nicht nur uns, sondern auch unseren geliebten Hund und jedes Tier, dem sie begegnet, mit ihrer Wärme zu berühren.  
-
-Ihr Herz schlägt für die Natur und alle Lebewesen darin. Mit großer Empathie und einem unvergleichlich sensiblen Gespür erkennt sie, was andere brauchen, oft bevor sie es selbst wissen. Ihre positive Ausstrahlung und die guten Eigenschaften, die sie ausstrahlt, machen sie zu einer wahren Inspiration – voller Sanftmut, Geduld und innerer Stärke.  
-
-Am glücklichsten ist sie, wenn sie Zeit mit ihrer Familie verbringt, sei es bei langen Spaziergängen mit unserem Hund oder bei gemütlichen Abenden zuhause. Unsere Mutter ist für uns ein leuchtendes Vorbild, das zeigt, wie Liebe und Hingabe die Welt ein bisschen schöner machen können.  
-</p>
-    </section>
-    <section id="links">
-        <h2>Was Monika Ernst verbindet... Links</h2>
-        <ul>
-            <li><a href="https://drive.google.com/file/d/1Uq6BN20eqbKI2tXgut0sLYFmaPDTwRAA/view?usp=drivesdk">Link 1</a></li>
-            <li><a href="https://drive.google.com/file/d/1QIx_D4_-215T0yjRplJy9rN4QSCfaFfq/view?usp=drivesdk">Link 2</a></li>
-            <li><a href="https://drive.google.com/file/d/1WP_qrdXerkIvR2DXKTOtLaEBGVfxnWEc/view?usp=drivesdk">Link 3</a></li>
-            <li><a href="https://drive.google.com/file/d/1Xn_SiY__v7hHy5QiUhx_bWHTjC2KZcU4/view?usp=drivesdk">Link 4</a></li>
-        </ul>
-    </section>
-    <section id="impressum">
-        <h2>Impressum</h2>
-        <p>Verantwortlich für den Inhalt:<br>
-           Monika Ernst<br>
-           Willy-Brandt-Straße 11<br>
-           64354 Reinheim<br>
-           Telefon: nicht verfügbar<br>
-           Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV:
-Monika Ernst
-
-Hinweis zur Streitbeilegung:
-Sterbenhttps://ec.eu​​.e/con
-Uns
-
-Wir sind nicht bereit oder verpflichtet, ein Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle zu betreiben. 
-           Email: <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a></p>
-    </section>
-    <section id="datenschutz">
-        <h2>Datenschutzerklärung</h2>
-        <p>Diese Webseite beachtet die Datenschutz-Grundverordnung (DSGVO).<br>
-        Es werden keine personenbezogenen Daten ohne Zustimmung gespeichert. Für weitere Fragen kontaktieren Sie bitte: <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a>.</p>
-    </section>
+    <main>
+        <section id="ueber-mich">
+            <h2>Über mich</h2>
+            <img src="profile.jpg" alt="Profilbild von Monika Ernst">
+            <p>Meine Mutter ist ein echter Familienmensch – das Herz und die Seele unseres Zuhauses. Mit ihrer liebevollen Art schafft sie es, nicht nur uns, sondern auch unseren geliebten Hund und jedes Tier, dem sie begegnet, mit ihrer Wärme zu berühren.</p>
+            <p>Ihr Herz schlägt für die Natur und alle Lebewesen darin. Mit großer Empathie erkennt sie, was andere brauchen, oft bevor sie es selbst wissen.</p>
+        </section>
+        <section id="links">
+            <h2>Wichtige Links</h2>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1Uq6BN20eqbKI2tXgut0sLYFmaPDTwRAA/view?usp=drivesdk" target="_blank">Dokument 1</a></li>
+                <li><a href="https://drive.google.com/file/d/1QIx_D4_-215T0yjRplJy9rN4QSCfaFfq/view?usp=drivesdk" target="_blank">Dokument 2</a></li>
+                <li><a href="https://drive.google.com/file/d/1WP_qrdXerkIvR2DXKTOtLaEBGVfxnWEc/view?usp=drivesdk" target="_blank">Dokument 3</a></li>
+                <li><a href="https://drive.google.com/file/d/1Xn_SiY__v7hHy5QiUhx_bWHTjC2KZcU4/view?usp=drivesdk" target="_blank">Dokument 4</a></li>
+            </ul>
+        </section>
+        <section id="impressum">
+            <h2>Impressum</h2>
+            <p>Verantwortlich für den Inhalt:<br>
+                Monika Ernst<br>
+                Willy-Brandt-Straße 11<br>
+                64354 Reinheim<br>
+                Email: <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a></p>
+        </section>
+        <section id="datenschutz">
+            <h2>Datenschutzerklärung</h2>
+            <p>Diese Webseite beachtet die Datenschutz-Grundverordnung (DSGVO). Es werden keine personenbezogenen Daten ohne Zustimmung gespeichert.</p>
+            <p>Für weitere Informationen: <a href="mailto:monika.ernst493@gmail.com">Kontakt</a>.</p>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
