@@ -1,5 +1,3 @@
-# Erstellung der optimierten und personalisierten Version der Webseite basierend auf den gewünschten Änderungen
-personalized_html = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -12,7 +10,6 @@ personalized_html = """
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('b.hintergrund.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -80,6 +77,26 @@ personalized_html = """
             text-decoration: none;
         }
 
+        /* Pop-up Vorseite */
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #popup img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+        }
+
         /* Animationen */
         @keyframes fadeIn {
             from {
@@ -94,8 +111,13 @@ personalized_html = """
     </style>
 </head>
 <body>
+    <!-- Pop-up Vorseite -->
+    <div id="popup">
+        <img src="bild1.png" alt="Vorseite Bild">
+    </div>
+
     <header>
-        <img src="Profil.png" alt="Profilbild von Monika Ernst">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <h1>Willkommen auf meiner Webseite!</h1>
         <p>Einblicke in das Leben von Monika Ernst und ihre Welt – eine Plattform für Familie, Freunde und Inspiration.</p>
     </header>
@@ -114,8 +136,7 @@ personalized_html = """
         <section id="videos">
             <h2>YouTube Videos</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                <iframe width="300" height="200" src="https://www.youtube.com/embed/NPc8xOd9sIY" frameborder="0" allowfullscreen></iframe>
-                <iframe width="300" height="200" src="https://www.youtube.com/embed/Eob6BcRxB1E" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/cTWDi1LQYKs" frameborder="0" allowfullscreen></iframe>
                 <iframe width="300" height="200" src="https://www.youtube.com/embed/7TSPb8ZJJ1U" frameborder="0" allowfullscreen></iframe>
                 <iframe width="300" height="200" src="https://www.youtube.com/embed/xwdRjKNKlok" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -138,33 +159,31 @@ personalized_html = """
     <footer>
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
+    <script>
+        // Pop-up nach 12 Sekunden entfernen
+        setTimeout(() => {
+            document.getElementById('popup').style.display = 'none';
+        }, 12000);
+
+        // Hintergrundbilder für die Diashow
+        const backgrounds = [
+            'hintergrund1.png',
+            'hintergrund2.png',
+            'hintergrund3.png',
+            'hintergrund4.png',
+            'hintergrund5.png',
+            'hintergrund6.png'
+        ];
+
+        let index = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
+            index = (index + 1) % backgrounds.length;
+        }
+
+        // Hintergrundbild alle 5 Sekunden ändern
+        setInterval(changeBackground, 5000);
+    </script>
 </body>
-<script>
-    // Array der Hintergrundbilder
-    const backgrounds = [
-        'b.hintergrund.png',
-        'hintergrund1.png',
-        'hintergrund2.png',
-        'hintergrund3.png',
-        'hintergrund4.png'
-    ];
-
-    let index = 0;
-
-    function changeBackground() {
-        document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
-        index = (index + 1) % backgrounds.length; // Schleife für den Hintergrundwechsel
-    }
-
-    // Hintergrundbild alle 5 Sekunden ändern
-    setInterval(changeBackground, 5000);
-</script>
 </html>
-"""
-
-file_path_personalized = "/mnt/data/monika_ernst_personalized.html"
-
-with open(file_path_personalized, "w") as file:
-    file.write(personalized_html)
-
-file_path_personalized
