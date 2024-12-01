@@ -1,3 +1,8 @@
+# Erstellung des finalen HTML-Codes mit den gewünschten Änderungen:
+# 1. Hintergrund-Diashow (Hintergrundbilder wechseln automatisch)
+# 2. Transparente Textflächen für Abschnitte
+
+final_updated_html = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -52,7 +57,7 @@
         }
         section {
             padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.7); /* Transparente Textflächen */
             margin: 20px auto;
             max-width: 900px;
             border-radius: 12px;
@@ -146,5 +151,34 @@
     <footer>
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
+    <script>
+        // Hintergrundbilder für die Diashow
+        const backgrounds = [
+            'hintergrund1.png',
+            'hintergrund2.png',
+            'hintergrund3.png',
+            'hintergrund4.png',
+            'hintergrund5.png',
+            'hintergrund6.png'
+        ];
+
+        let index = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
+            index = (index + 1) % backgrounds.length;
+        }
+
+        // Hintergrundbild alle 5 Sekunden ändern
+        setInterval(changeBackground, 5000);
+    </script>
 </body>
 </html>
+"""
+
+file_path_final = "/mnt/data/monika_ernst_updated_final.html"
+
+with open(file_path_final, "w") as file:
+    file.write(final_updated_html)
+
+file_path_final
