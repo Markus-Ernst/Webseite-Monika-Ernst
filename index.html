@@ -1,5 +1,3 @@
-# Speichern der finalen Version der Webseite mit allen gewünschten Funktionen und Anpassungen
-final_html_code = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -25,14 +23,6 @@ final_html_code = """
             background: rgba(255, 255, 255, 0.8);
             border-bottom: 5px solid #ddd;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        header img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            display: block;
-            margin: 0 auto;
-            border: 3px solid #333;
         }
         header h1 {
             margin: 20px 0;
@@ -79,35 +69,6 @@ final_html_code = """
             text-decoration: none;
         }
 
-        /* Pop-up */
-        #popup1, #popup2 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        #popup2 {
-            display: none;
-        }
-        #popup1 img, #popup2 img {
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
-        }
-        #popup1 img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        #popup2 img {
-            max-width: 270%;
-            max-height: 270%;
-        }
-
         /* Animationen */
         @keyframes fadeIn {
             from {
@@ -122,18 +83,28 @@ final_html_code = """
     </style>
 </head>
 <body>
-    <!-- Pop-up 1 -->
-    <div id="popup1">
-        <img src="bild1.png" alt="Vorseite Bild 1">
-    </div>
-
-    <!-- Pop-up 2 -->
-    <div id="popup2">
-        <img src="bild1.png" alt="Vorseite Bild 2">
-    </div>
-
     <header>
-        <iframe id="diashow-video" width="100%" height="315" src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- Beide YouTube-Videos oben eingebettet -->
+        <div>
+            <iframe id="diashow-video-1" 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <div style="margin-top: 20px;">
+            <iframe id="diashow-video-2" 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/NPc8xOd9sIY?autoplay=1&loop=1&playlist=NPc8xOd9sIY" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+            </iframe>
+        </div>
         <h1>Willkommen auf meiner Webseite!</h1>
         <p>Einblicke in das Leben von Monika Ernst und ihre Welt – eine Plattform für Familie, Freunde und Inspiration.</p>
     </header>
@@ -175,111 +146,5 @@ final_html_code = """
     <footer>
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
-    <script>
-        // Pop-up 1 anzeigen, dann nach 12 Sekunden Pop-up 2 anzeigen
-        setTimeout(() => {
-            const popup1 = document.getElementById('popup1');
-            popup1.style.display = 'none'; // Erstes Pop-up ausblenden
-
-            const popup2 = document.getElementById('popup2');
-            popup2.style.display = 'flex'; // Zweites Pop-up einblenden
-
-            // Zweites Pop-up nach weiteren 9 Sekunden ausblenden
-            setTimeout(() => {
-                popup2.style.display = 'none';
-            }, 9000);
-        }, 12000);
-
-        // Hintergrundbilder für die Diashow
-        const backgrounds = [
-            'hintergrund1.png',
-            'hintergrund2.png',
-            'hintergrund3.png',
-            'hintergrund4.png',
-            'hintergrund5.png',
-            'hintergrund6.png'
-        ];
-
-        let index = 0;
-
-        function changeBackground() {
-            document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
-            index = (index + 1) % backgrounds.length;
-        }
-
-        // Hintergrundbild alle 5 Sekunden ändern
-        setInterval(changeBackground, 5000);
-
-        // Diashow-Video oben auf der Hauptseite automatisch starten
-        window.addEventListener('load', function() {
-            const videoElement = document.getElementById('diashow-video');
-            if (videoElement) {
-                videoElement.play();
-            }
-        });
-    </script>
 </body>
 </html>
-<iframe id="diashow-video-1" 
-        width="100%" 
-        height="315" 
-        src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-</iframe>
-
-<iframe id="diashow-video-2" 
-        width="100%" 
-        height="315" 
-        src="https://www.youtube.com/embed/NPc8xOd9sIY?autoplay=1&loop=1&playlist=NPc8xOd9sIY" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-</iframe>
-<iframe id="diashow-video-1" 
-        width="100%" 
-        height="315" 
-        src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-</iframe>
-
-<iframe id="diashow-video-2" 
-        width="100%" 
-        height="315" 
-        src="https://www.youtube.com/embed/NPc8xOd9sIY?autoplay=1&loop=1&playlist=NPc8xOd9sIY" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-</iframe>
-<header>
-    <div>
-        <iframe id="diashow-video-1" 
-                width="100%" 
-                height="315" 
-                src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-        </iframe>
-    </div>
-    <div style="margin-top: 20px;">
-        <iframe id="diashow-video-2" 
-                width="100%" 
-                height="315" 
-                src="https://www.youtube.com/embed/NPc8xOd9sIY?autoplay=1&loop=1&playlist=NPc8xOd9sIY" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-        </iframe>
-    </div>
-    <h1>Willkommen auf meiner Webseite!</h1>
-    <p>Einblicke in das Leben von Monika Ernst und ihre Welt – eine Plattform für Familie, Freunde und Inspiration.</p>
-</header>
-
-
-"""
-
-file_path
