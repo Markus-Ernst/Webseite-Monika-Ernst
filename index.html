@@ -1,5 +1,5 @@
-# Erstellen der erweiterten und optimierten Version der Webseite mit den gewünschten Änderungen
-optimized_html = """
+# Erstellung der optimierten und personalisierten Version der Webseite basierend auf den gewünschten Änderungen
+personalized_html = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -34,7 +34,6 @@ optimized_html = """
             display: block;
             margin: 0 auto;
             border: 3px solid #333;
-            animation: fadeIn 2s;
         }
         header h1 {
             margin: 20px 0;
@@ -69,7 +68,6 @@ optimized_html = """
             max-width: 900px;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1.5s;
         }
         footer {
             text-align: center;
@@ -103,7 +101,7 @@ optimized_html = """
     </header>
     <nav>
         <a href="#ueber-mich">Über mich</a>
-        <a href="#links">Links</a>
+        <a href="#videos">YouTube Videos</a>
         <a href="#impressum">Impressum</a>
         <a href="#datenschutz">Datenschutz</a>
     </nav>
@@ -113,14 +111,14 @@ optimized_html = """
             <p>Mein Name ist Monika Ernst, und ich bin ein echter Familienmensch. Mein Herz schlägt für die Familie, die Natur und unsere geliebten Haustiere. Besonders unser Hund ist ein wichtiger Teil meines Lebens. Mit großer Freude widme ich mich auch sozialen Themen und helfe, wo immer ich kann.</p>
             <p>Meine Hobbys umfassen Spaziergänge in der Natur, Lesen und kreative Arbeiten. Diese Webseite ist ein kleines Projekt, das meine Interessen und meine Welt widerspiegelt.</p>
         </section>
-        <section id="links">
-            <h2>Wichtige Links</h2>
-            <ul>
-                <li><a href="https://drive.google.com/file/d/1Uq6BN20eqbKI2tXgut0sLYFmaPDTwRAA/view?usp=drivesdk" target="_blank">Interessantes Dokument 1</a></li>
-                <li><a href="https://drive.google.com/file/d/1QIx_D4_-215T0yjRplJy9rN4QSCfaFfq/view?usp=drivesdk" target="_blank">Interessantes Dokument 2</a></li>
-                <li><a href="https://drive.google.com/file/d/1WP_qrdXerkIvR2DXKTOtLaEBGVfxnWEc/view?usp=drivesdk" target="_blank">Interessantes Dokument 3</a></li>
-                <li><a href="https://drive.google.com/file/d/1Xn_SiY__v7hHy5QiUhx_bWHTjC2KZcU4/view?usp=drivesdk" target="_blank">Interessantes Dokument 4</a></li>
-            </ul>
+        <section id="videos">
+            <h2>YouTube Videos</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/NPc8xOd9sIY" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/Eob6BcRxB1E" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/7TSPb8ZJJ1U" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/xwdRjKNKlok" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
         <section id="impressum">
             <h2>Impressum</h2>
@@ -130,7 +128,6 @@ optimized_html = """
             64354 Reinheim<br>
             <strong>Kontakt:</strong> <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a></p>
             <p><strong>Hinweis gemäß § 5 TMG:</strong> Diese Webseite dient ausschließlich privaten Zwecken und wird nicht kommerziell betrieben.</p>
-            <p><strong>Streitbeilegung:</strong> Die EU stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. Wir sind jedoch nicht verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
         </section>
         <section id="datenschutz">
             <h2>Datenschutzerklärung</h2>
@@ -165,9 +162,9 @@ optimized_html = """
 </html>
 """
 
-file_path_optimized = "/mnt/data/monika_ernst_optimized.html"
+file_path_personalized = "/mnt/data/monika_ernst_personalized.html"
 
-with open(file_path_optimized, "w") as file:
-    file.write(optimized_html)
+with open(file_path_personalized, "w") as file:
+    file.write(personalized_html)
 
-file_path_optimized
+file_path_personalized
