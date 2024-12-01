@@ -110,6 +110,30 @@
         }
     </style>
 </head>
+<!-- Pop-up 1 -->
+<div id="popup1" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+    <img src="bild1.png" alt="Vorseite Bild 1" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);">
+</div>
+
+<!-- Pop-up 2 -->
+<div id="popup2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 9999;">
+    <img src="bild1.png" alt="Vorseite Bild 2" style="max-width: 270%; max-height: 270%; border-radius: 10px; box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);">
+</div>
+<script>
+    // Pop-up 1 anzeigen, dann nach 12 Sekunden Pop-up 2 anzeigen
+    setTimeout(() => {
+        const popup1 = document.getElementById('popup1');
+        popup1.style.display = 'none'; // Erstes Pop-up ausblenden
+
+        const popup2 = document.getElementById('popup2');
+        popup2.style.display = 'flex'; // Zweites Pop-up einblenden
+
+        // Zweites Pop-up nach weiteren 9 Sekunden ausblenden
+        setTimeout(() => {
+            popup2.style.display = 'none';
+        }, 9000);
+    }, 12000);
+</script>
 <body>
     <!-- Pop-up Vorseite -->
     <div id="popup">
