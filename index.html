@@ -356,3 +356,30 @@ with open(file_path_final, "w") as file:
     file.write(final_updated_html)
 
 file_path_final
+<!-- Pop-up mit großem Bild -->
+<div id="popup">
+    <img src="bild1.png" alt="Vorseite Bild" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);">
+</div>
+
+<!-- YouTube-Video wird nach Pop-up angezeigt -->
+<div id="youtube-video" style="display: none;">
+    <iframe id="video-frame" 
+            width="100%" 
+            height="600" 
+            src="https://www.youtube.com/embed/NPc8xOd9sIY?autoplay=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+    // Zeigt das Pop-up an, blendet es nach 12 Sekunden aus und zeigt das Video
+    setTimeout(() => {
+        const popup = document.getElementById('popup'); // Pop-up
+        const video = document.getElementById('youtube-video'); // Video
+
+        popup.style.display = 'none'; // Pop-up ausblenden
+        video.style.display = 'block'; // Video anzeigen
+    }, 12000); // 12 Sekunden Zeitverzögerung
+</script>
