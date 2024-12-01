@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+# Speichern des aktuellen HTML-Codes in einer Datei
+html_code = """<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -10,15 +11,20 @@
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: url('b.hintergrund.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #333;
-            line-height: 1.6;
-            background-color: #f4f4f9; /* Leichte Hintergrundfarbe */
+            line-height: 1.8;
+            transition: all 0.5s ease-in-out;
         }
         header {
             text-align: center;
-            padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.9); /* Halbtransparenter Hintergrund */
-            border-bottom: 3px solid #ddd;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 5px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         header img {
             border-radius: 50%;
@@ -27,49 +33,64 @@
             display: block;
             margin: 0 auto;
             border: 3px solid #333;
+            animation: fadeIn 2s;
         }
         header h1 {
-            margin: 20px 0 10px;
-            font-size: 2.5em;
+            margin: 20px 0;
+            font-size: 3em;
+            color: #444;
         }
         header p {
-            margin: 0;
             font-size: 1.2em;
-            color: #555;
+            color: #666;
         }
         nav {
             display: flex;
             justify-content: center;
             background: #333;
-            padding: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
+            margin: 0 20px;
+            font-size: 1.2em;
             transition: color 0.3s;
         }
         nav a:hover {
             color: #ffd700;
         }
         section {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
             margin: 20px auto;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s;
         }
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             background: #333;
             color: #fff;
         }
         footer a {
             color: #ffd700;
             text-decoration: none;
+        }
+
+        /* Animationen */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -121,3 +142,11 @@
     </footer>
 </body>
 </html>
+"""
+
+file_path = "/mnt/data/monika_ernst_website.html"
+
+with open(file_path, "w") as file:
+    file.write(html_code)
+
+file_path
