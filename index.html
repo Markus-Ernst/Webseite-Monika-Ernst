@@ -20,7 +20,7 @@
         header {
             text-align: center;
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.8); /* Halbtransparenter Hintergrund */
+            background: rgba(255, 255, 255, 0.9); /* Halbtransparenter Hintergrund */
             border-bottom: 3px solid #ddd;
         }
         header img {
@@ -29,7 +29,7 @@
             height: 150px;
             display: block;
             margin: 0 auto;
-            border: 3px solid #333; /* Rahmen um Profilbild */
+            border: 3px solid #333;
         }
         header h1 {
             margin: 20px 0 10px;
@@ -40,11 +40,47 @@
             font-size: 1.2em;
             color: #555;
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        section {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        section img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 10px;
+            width: 150px;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
         footer {
             text-align: center;
             padding: 15px;
             background: #333;
             color: #fff;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -54,10 +90,44 @@
         <h1>Willkommen auf meiner Webseite!</h1>
         <p>Einblicke in das Leben von Monika Ernst und ihre Welt.</p>
     </header>
+    <nav>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#links">Links</a>
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutz</a>
+    </nav>
+    <main>
+        <section id="ueber-mich">
+            <h2>Über mich</h2>
+            <img src="Profil.png" alt="Profilbild von Monika Ernst">
+            <p>Meine Mutter ist ein echter Familienmensch – das Herz und die Seele unseres Zuhauses. Mit ihrer liebevollen Art schafft sie es, nicht nur uns, sondern auch unseren geliebten Hund und jedes Tier, dem sie begegnet, mit ihrer Wärme zu berühren.</p>
+            <p>Ihr Herz schlägt für die Natur und alle Lebewesen darin. Mit großer Empathie erkennt sie, was andere brauchen, oft bevor sie es selbst wissen.</p>
+        </section>
+        <section id="links">
+            <h2>Wichtige Links</h2>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1Uq6BN20eqbKI2tXgut0sLYFmaPDTwRAA/view?usp=drivesdk" target="_blank">Dokument 1</a></li>
+                <li><a href="https://drive.google.com/file/d/1QIx_D4_-215T0yjRplJy9rN4QSCfaFfq/view?usp=drivesdk" target="_blank">Dokument 2</a></li>
+                <li><a href="https://drive.google.com/file/d/1WP_qrdXerkIvR2DXKTOtLaEBGVfxnWEc/view?usp=drivesdk" target="_blank">Dokument 3</a></li>
+                <li><a href="https://drive.google.com/file/d/1Xn_SiY__v7hHy5QiUhx_bWHTjC2KZcU4/view?usp=drivesdk" target="_blank">Dokument 4</a></li>
+            </ul>
+        </section>
+        <section id="impressum">
+            <h2>Impressum</h2>
+            <p>Verantwortlich für den Inhalt:<br>
+                Monika Ernst<br>
+                Willy-Brandt-Straße 11<br>
+                64354 Reinheim<br>
+                Email: <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a></p>
+        </section>
+        <section id="datenschutz">
+            <h2>Datenschutzerklärung</h2>
+            <p>Diese Webseite beachtet die Datenschutz-Grundverordnung (DSGVO). Es werden keine personenbezogenen Daten ohne Zustimmung gespeichert.</p>
+            <p>Für weitere Informationen: <a href="mailto:monika.ernst493@gmail.com">Kontakt</a>.</p>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
 </body>
 </html>
-background-image: url('images/B.Hintergrund.png');
-<img src="images/Profil.png" alt="Profilbild von Monika Ernst">
