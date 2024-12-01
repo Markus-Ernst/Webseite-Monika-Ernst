@@ -1,5 +1,6 @@
-# Speichern des aktuellen HTML-Codes in einer Datei
-html_code = """<!DOCTYPE html>
+# Erstellen der erweiterten und optimierten Version der Webseite mit den gewünschten Änderungen
+optimized_html = """
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -17,12 +18,12 @@ html_code = """<!DOCTYPE html>
             background-attachment: fixed;
             color: #333;
             line-height: 1.8;
-            transition: all 0.5s ease-in-out;
+            transition: background-image 1s ease-in-out;
         }
         header {
             text-align: center;
             padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             border-bottom: 5px solid #ddd;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -41,7 +42,7 @@ html_code = """<!DOCTYPE html>
             color: #444;
         }
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: #666;
         }
         nav {
@@ -141,12 +142,32 @@ html_code = """<!DOCTYPE html>
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
 </body>
+<script>
+    // Array der Hintergrundbilder
+    const backgrounds = [
+        'b.hintergrund.png',
+        'hintergrund1.png',
+        'hintergrund2.png',
+        'hintergrund3.png',
+        'hintergrund4.png'
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+        document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
+        index = (index + 1) % backgrounds.length; // Schleife für den Hintergrundwechsel
+    }
+
+    // Hintergrundbild alle 5 Sekunden ändern
+    setInterval(changeBackground, 5000);
+</script>
 </html>
 """
 
-file_path = "/mnt/data/monika_ernst_website.html"
+file_path_optimized = "/mnt/data/monika_ernst_optimized.html"
 
-with open(file_path, "w") as file:
-    file.write(html_code)
+with open(file_path_optimized, "w") as file:
+    file.write(optimized_html)
 
-file_path
+file_path_optimized
