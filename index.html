@@ -1,3 +1,5 @@
+# Speichern der finalen Version der Webseite mit allen gewünschten Funktionen und Anpassungen
+final_html_code = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -77,8 +79,8 @@
             text-decoration: none;
         }
 
-        /* Pop-up Vorseite */
-        #popup {
+        /* Pop-up */
+        #popup1, #popup2 {
             position: fixed;
             top: 0;
             left: 0;
@@ -90,11 +92,20 @@
             align-items: center;
             z-index: 9999;
         }
-        #popup img {
+        #popup2 {
+            display: none;
+        }
+        #popup1 img, #popup2 img {
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+        }
+        #popup1 img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+        }
+        #popup2 img {
+            max-width: 270%;
+            max-height: 270%;
         }
 
         /* Animationen */
@@ -110,38 +121,19 @@
         }
     </style>
 </head>
-<!-- Pop-up 1 -->
-<div id="popup1" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-    <img src="bild1.png" alt="Vorseite Bild 1" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);">
-</div>
-
-<!-- Pop-up 2 -->
-<div id="popup2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 9999;">
-    <img src="bild1.png" alt="Vorseite Bild 2" style="max-width: 270%; max-height: 270%; border-radius: 10px; box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);">
-</div>
-<script>
-    // Pop-up 1 anzeigen, dann nach 12 Sekunden Pop-up 2 anzeigen
-    setTimeout(() => {
-        const popup1 = document.getElementById('popup1');
-        popup1.style.display = 'none'; // Erstes Pop-up ausblenden
-
-        const popup2 = document.getElementById('popup2');
-        popup2.style.display = 'flex'; // Zweites Pop-up einblenden
-
-        // Zweites Pop-up nach weiteren 9 Sekunden ausblenden
-        setTimeout(() => {
-            popup2.style.display = 'none';
-        }, 9000);
-    }, 12000);
-</script>
 <body>
-    <!-- Pop-up Vorseite -->
-    <div id="popup">
-        <img src="bild1.png" alt="Vorseite Bild">
+    <!-- Pop-up 1 -->
+    <div id="popup1">
+        <img src="bild1.png" alt="Vorseite Bild 1">
+    </div>
+
+    <!-- Pop-up 2 -->
+    <div id="popup2">
+        <img src="bild1.png" alt="Vorseite Bild 2">
     </div>
 
     <header>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="diashow-video" width="100%" height="315" src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <h1>Willkommen auf meiner Webseite!</h1>
         <p>Einblicke in das Leben von Monika Ernst und ihre Welt – eine Plattform für Familie, Freunde und Inspiration.</p>
     </header>
@@ -184,9 +176,18 @@
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
     <script>
-        // Pop-up nach 12 Sekunden entfernen
+        // Pop-up 1 anzeigen, dann nach 12 Sekunden Pop-up 2 anzeigen
         setTimeout(() => {
-            document.getElementById('popup').style.display = 'none';
+            const popup1 = document.getElementById('popup1');
+            popup1.style.display = 'none'; // Erstes Pop-up ausblenden
+
+            const popup2 = document.getElementById('popup2');
+            popup2.style.display = 'flex'; // Zweites Pop-up einblenden
+
+            // Zweites Pop-up nach weiteren 9 Sekunden ausblenden
+            setTimeout(() => {
+                popup2.style.display = 'none';
+            }, 9000);
         }, 12000);
 
         // Hintergrundbilder für die Diashow
@@ -208,121 +209,17 @@
 
         // Hintergrundbild alle 5 Sekunden ändern
         setInterval(changeBackground, 5000);
+
+        // Diashow-Video oben auf der Hauptseite automatisch starten
+        window.addEventListener('load', function() {
+            const videoElement = document.getElementById('diashow-video');
+            if (videoElement) {
+                videoElement.play();
+            }
+        });
     </script>
 </body>
 </html>
-# Erweiterung des HTML-Codes entsprechend der neuen Anforderungen
-# 1. Zwei Pop-up Fenster sequentiell anzeigen, das zweite Pop-up wird größer und bleibt 9 Sekunden.
-# 2. Das Diashow-Video auf der Hauptseite soll automatisch starten.
-
-updated_script = """
-<script>
-    // Pop-up 1: Nach 12 Sekunden entfernen und Pop-up 2 anzeigen
-    setTimeout(() => {
-        document.getElementById('popup1').style.display = 'none';
-        document.getElementById('popup2').style.display = 'flex';
-
-        // Pop-up 2: Nach 9 weiteren Sekunden entfernen
-        setTimeout(() => {
-            document.getElementById('popup2').style.display = 'none';
-        }, 9000);
-    }, 12000);
-
-    // Hintergrundbilder für die Diashow
-    const backgrounds = [
-        'hintergrund1.png',
-        'hintergrund2.png',
-        'hintergrund3.png',
-        'hintergrund4.png',
-        'hintergrund5.png',
-        'hintergrund6.png'
-    ];
-
-    let index = 0;
-
-    function changeBackground() {
-        document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
-        index = (index + 1) % backgrounds.length;
-    }
-
-    // Hintergrundbild alle 5 Sekunden ändern
-    setInterval(changeBackground, 5000);
-
-    // Diashow-Video oben auf der Hauptseite automatisch starten
-    window.addEventListener('load', function() {
-        const videoElement = document.getElementById('diashow-video');
-        if (videoElement) {
-            videoElement.play();
-        }
-    });
-</script>
 """
 
-# Neue HTML-Elemente für zwei Pop-ups hinzufügen
-popup_html = """
-<!-- Pop-up 1 -->
-<div id="popup1" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-    <img src="bild1.png" alt="Vorseite Bild" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);">
-</div>
-
-<!-- Pop-up 2 (3x größer und bleibt für 9 Sekunden) -->
-<div id="popup2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 9999;">
-    <img src="bild1.png" alt="Vorseite Bild" style="max-width: 270%; max-height: 270%; border-radius: 10px; box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);">
-</div>
-"""
-
-file_path_update = "/mnt/data/monika_ernst_updated_script.html"
-
-with open(file_path_update, "w") as file:
-    file.write(popup_html + updated_script)
-
-file_path_update
-<!-- Pop-up 1 -->
-<div id="popup1" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-    <img src="bild1.png" alt="Vorseite Bild" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);">
-</div>
-
-<!-- Pop-up 2 (3x größer und bleibt für 9 Sekunden) -->
-<div id="popup2" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 9999;">
-    <img src="bild1.png" alt="Vorseite Bild" style="max-width: 270%; max-height: 270%; border-radius: 10px; box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);">
-</div>
-<script>
-    // Pop-up 1: Nach 12 Sekunden entfernen und Pop-up 2 anzeigen
-    setTimeout(() => {
-        document.getElementById('popup1').style.display = 'none';
-        document.getElementById('popup2').style.display = 'flex';
-
-        // Pop-up 2: Nach 9 weiteren Sekunden entfernen
-        setTimeout(() => {
-            document.getElementById('popup2').style.display = 'none';
-        }, 9000);
-    }, 12000);
-
-    // Hintergrundbilder für die Diashow
-    const backgrounds = [
-        'hintergrund1.png',
-        'hintergrund2.png',
-        'hintergrund3.png',
-        'hintergrund4.png',
-        'hintergrund5.png',
-        'hintergrund6.png'
-    ];
-
-    let index = 0;
-
-    function changeBackground() {
-        document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
-        index = (index + 1) % backgrounds.length;
-    }
-
-    // Hintergrundbild alle 5 Sekunden ändern
-    setInterval(changeBackground, 5000);
-
-    // Diashow-Video oben auf der Hauptseite automatisch starten
-    window.addEventListener('load', function() {
-        const videoElement = document.getElementById('diashow-video');
-        if (videoElement) {
-            videoElement.play();
-        }
-    });
-</script>
+file_path
