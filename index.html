@@ -171,14 +171,46 @@
                 <iframe width="300" height="200" src="https://www.youtube.com/embed/Bg-UE0pA8GY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
            <section id="youtube-video">
     <h2>Inspirierendes YouTube-Video</h2>
+   <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/NPc8xOd9sIY" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe><iframe 
+    width="100%" 
+    height="400" 
+    src="https://www.youtube.com/embed/NPc8xOd9sIY?autoplay=1" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe><style>
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* Verhältnis 16:9 */
+        height: 0;
+        overflow: hidden;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<div class="video-container">
     <iframe 
-        width="100%" 
-        height="400" 
-        src="https://youtu.be/NPc8xOd9sIY" 
+        src="https://www.youtube.com/embed/NPc8xOd9sIY" 
         frameborder="0" 
         allow="autoplay; encrypted-media" 
         allowfullscreen>
     </iframe>
+</div>
+
+
 </section>
  </div>
         </section>
