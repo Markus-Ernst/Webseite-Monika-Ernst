@@ -1,37 +1,3 @@
-<!-- Pop-up mit großem Bild -->
-<div id="popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-    <img src="bild1.png" alt="Vorseite Bild" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);">
-</div>
-
-<!-- YouTube-Video wird nach Pop-up angezeigt -->
-<div id="youtube-video" style="display: none; margin-top: 20px;">
-    <iframe id="video-frame" 
-            width="100%" 
-            height="600" 
-            src="https://www.youtube.com/embed/NPc8xOd9sIY?autoplay=1" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-    </iframe>
-</div>
-
-<script>
-    // Funktion, um das Pop-up zu entfernen und das Video einzublenden
-    setTimeout(() => {
-        const popup = document.getElementById('popup'); // Pop-up Element
-        const video = document.getElementById('youtube-video'); // Video Element
-
-        if (popup) {
-            popup.style.display = 'none'; // Pop-up ausblenden
-        }
-
-        if (video) {
-            video.style.display = 'block'; // Video anzeigen
-        }
-    }, 12000); // Pop-up bleibt 12 Sekunden sichtbar
-</script>
-# Speichern der finalen Version der Webseite mit allen gewünschten Funktionen und Anpassungen
-final_html_code = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -58,32 +24,12 @@ final_html_code = """
             border-bottom: 5px solid #ddd;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        header img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            display: block;
-            margin: 0 auto;
-            border: 3px solid #333;
-        }
-        header h1 {
-            margin: 20px 0;
-            font-size: 3em;
-            color: #444;
-        }
-        header p {
-            font-size: 1.3em;
-            color: #666;
-        }
         nav {
             display: flex;
             justify-content: center;
             background: #333;
             padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);<nav>
-    <a href="#impressum">Impressum</a>
-    <a href="#datenschutz">Datenschutz</a>
-</nav>
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav a {
             color: #fff;
@@ -113,64 +59,12 @@ final_html_code = """
             color: #ffd700;
             text-decoration: none;
         }
-
-        /* Pop-up */
-        #popup1, #popup2 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        #popup2 {
-            display: none;
-        }
-        #popup1 img, #popup2 img {
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
-        }
-        #popup1 img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        #popup2 img {
-            max-width: 270%;
-            max-height: 270%;
-        }
-
-        /* Animationen */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Pop-up 1 -->
-    <div id="popup1">
-        <img src="bild1.png" alt="Vorseite Bild 1">
-    </div>
-
-    <!-- Pop-up 2 -->
-    <div id="popup2">
-        <img src="bild1.png" alt="Vorseite Bild 2">
-    </div>
-
     <header>
-        <iframe id="diashow-video" width="100%" height="315" src="https://www.youtube.com/embed/Eob6BcRxB1E?autoplay=1&loop=1&playlist=Eob6BcRxB1E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <h1>Willkommen auf Monika Ernst ihrer  Webseite!</h1>
-        <p>Einblicke in das Leben von Monika Ernst und ihre Welt – meine Plattform für Familie, Freunde und Inspiration.</p>
+        <h1>Willkommen auf Monika Ernsts Webseite!</h1>
+        <p>Einblicke in das Leben von Monika Ernst und ihre Welt – eine Plattform für Familie, Freunde und Inspiration.</p>
     </header>
     <nav>
         <a href="#ueber-mich">Über mich</a>
@@ -179,28 +73,40 @@ final_html_code = """
         <a href="#datenschutz">Datenschutz</a>
     </nav>
     <main>
+        <!-- Über mich -->
         <section id="ueber-mich">
             <h2>Über mich</h2>
             <p>Mein Name ist Monika Ernst, und ich bin ein echter Familienmensch. Mein Herz schlägt für die Familie, die Natur und unsere geliebten Haustiere. Besonders unser Hund ist ein wichtiger Teil meines Lebens. Mit großer Freude widme ich mich auch sozialen Themen und helfe, wo immer ich kann.</p>
             <p>Meine Hobbys umfassen Spaziergänge in der Natur, Lesen und kreative Arbeiten. Diese Webseite ist ein kleines Projekt, das meine Interessen und meine Welt widerspiegelt.</p>
         </section>
+
+        <!-- YouTube Videos -->
         <section id="videos">
             <h2>YouTube Videos</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                <iframe width="300" height="200" src="https://www.youtube.com/embed/cTWDi1LQYKs" frameborder="0" allowfullscreen></iframe>
-                <iframe width="300" height="200" src="https://www.youtube.com/embed/7TSPb8ZJJ1U" frameborder="0" allowfullscreen></iframe>
-                <iframe width="300" height="200" src="https://www.youtube.com/embed/xwdRjKNKlok" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/cTWDi1LQYKs?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/3nTEitl0CO8?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="300" height="200" src="https://www.youtube.com/embed/Bg-UE0pA8GY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </section>
+
+        <!-- Impressum -->
         <section id="impressum">
             <h2>Impressum</h2>
-            <p><strong>Verantwortlich für den Inhalt:</strong></p>
-            <p>Monika Ernst<br>
+            <p><strong>Angaben gemäß § 5 TMG:</strong><br>
+            Monika Ernst<br>
             Willy-Brandt-Straße 11<br>
-            64354 Reinheim<br>
-            <strong>Kontakt:</strong> <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a></p>
-            <p><strong>Hinweis gemäß § 5 TMG:</strong> Diese Webseite dient ausschließlich privaten Zwecken und wird nicht kommerziell betrieben.</p>
+            64354 Reinheim<br></p>
+            <p><strong>Kontakt:</strong><br>
+            Telefon: +49 (0) 179 4465022<br>
+            E-Mail: <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a></p>
+            <p><strong>Haftung für Inhalte:</strong><br>
+            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. 
+            Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
         </section>
+
+        <!-- Datenschutz -->
         <section id="datenschutz">
             <h2>Datenschutzerklärung</h2>
             <p>Diese Webseite speichert keine personenbezogenen Daten ohne ausdrückliche Zustimmung. Sollten Sie Fragen zum Datenschutz haben, kontaktieren Sie mich bitte unter: <a href="mailto:monika.ernst493@gmail.com">monika.ernst493@gmail.com</a>.</p>
@@ -210,142 +116,5 @@ final_html_code = """
     <footer>
         <p>&copy; 2024 Monika Ernst - Alle Rechte vorbehalten.</p>
     </footer>
-    <script>
-        // Pop-up 1 anzeigen, dann nach 12 Sekunden Pop-up 2 anzeigen
-        setTimeout(() => {
-            const popup1 = document.getElementById('popup1');
-            popup1.style.display = 'none'; // Erstes Pop-up ausblenden
-
-            const popup2 = document.getElementById('popup2');
-            popup2.style.display = 'flex'; // Zweites Pop-up einblenden
-
-            // Zweites Pop-up nach weiteren 9 Sekunden ausblenden
-            setTimeout(() => {
-                popup2.style.display = 'none';
-            }, 9000);
-        }, 12000);
-
-        // Hintergrundbilder für die Diashow
-        const backgrounds = [
-            'hintergrund1.png',
-            'hintergrund2.png',
-            'hintergrund3.png',
-            'hintergrund4.png',
-            'hintergrund5.png',
-            'hintergrund6.png'
-        ];
-
-        let index = 0;
-
-        function changeBackground() {
-            document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
-            index = (index + 1) % backgrounds.length;
-        }
-
-        // Hintergrundbild alle 5 Sekunden ändern
-        setInterval(changeBackground, 5000);
-
-        // Diashow-Video oben auf der Hauptseite automatisch starten
-        window.addEventListener('load', function() {
-            const videoElement = document.getElementById('diashow-video');
-            if (videoElement) {
-                videoElement.play();
-            }
-        });
-    </script>
 </body>
 </html>
-
-</iframe>
-<header>
-    <div>
-      
-        </iframe>
-    </div>
-    <h1>Willkommen auf Monis-  Webseite!</h1>
-    <p>Einblicke in das Leben von Monika Ernst und ihre Welt – eine Plattform für Familie, Freunde und Inspiration.</p>
-</header>
-<section id="impressum">
-    <h2>Impressum</h2>
-    <p>
-        <strong>Angaben gemäß § 5 TMG:</strong><br>
-        Markus Ernst<br>
-        Willy-Brandt-Straße 11<br>
-        64354 Reinheim<br>
-    </p>
-    <p>
-        <strong>Kontakt:</strong><br>
-        Telefon: +49 (0) 179 4465022<br>
-        E-Mail: <a href="mailto:markus.ernst493@gmail.com">markus.ernst493@gmail.com</a>
-    </p>
-    <p>
-        <strong>Haftung für Inhalte:</strong><br>
-        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. 
-        Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-    </p>
-    <p>
-        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. 
-        Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-    </p>
-    <p>
-        <strong>Haftung für Links:</strong><br>
-        Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. 
-        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. 
-        Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
-    </p>
-    <p>
-        Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. 
-        Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-    </p>
-    <p>
-        <strong>Urheberrecht:</strong><br>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. 
-        Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-    </p>
-    <p>
-        Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. 
-        Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. 
-        Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-    </p>
-</section>
-
-<section id="datenschutz">
-    <h2>Datenschutzerklärung</h2>
-    <p>
-        <strong>Datenschutz:</strong><br>
-        Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
-    </p>
-    <p>
-        Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. 
-        Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
-    </p>
-    <p>
-        Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-    </p>
-    <p>
-        <strong>Cookies:</strong><br>
-        Diese Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. 
-        Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.
-    </p>
-    <p>
-        Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies“. Sie werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. 
-        Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.
-    </p>
-    <p>
-        Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. 
-        Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
-    </p>
-    <p>
-        <strong>Server-Log-Dateien:</strong><br>
-        Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
-        <ul>
-            <li>Browsertyp und Browserversion</li>
-            <li>Verwendetes Betriebssystem</li>
-            <li>Referrer URL</li>
-            <li>Hostname des zugreifenden Rechners</li>
-            <li>Uhrzeit der Serveranfrage</li>
-        </ul>
-        Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. 
-        Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.
-    </p>
-</section>
