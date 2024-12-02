@@ -184,3 +184,28 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link entfernen</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Suche nach dem Link mit der spezifischen URL
+            const links = document.querySelectorAll('a[href="https://youtu.be/NPc8xOd9sIY"]');
+            
+            // Entferne alle gefundenen Links
+            links.forEach(link => {
+                link.remove();
+            });
+
+            console.log("Der Link wurde entfernt.");
+        });
+    </script>
+</head>
+<body>
+    <a href="https://youtu.be/NPc8xOd9sIY">Video-Link</a>
+    <a href="https://youtube.com">YouTube</a>
+</body>
+</html>
