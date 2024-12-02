@@ -61,6 +61,59 @@
         }
     </style>
 </head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', Arial, sans-serif;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: #333;
+        line-height: 1.8;
+        transition: background-image 1s ease-in-out; /* Sanfter Übergang */
+    }
+
+    .content {
+        background: rgba(255, 255, 255, 0.8); /* Transparente Textfläche */
+        margin: 20px auto;
+        max-width: 900px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<script>
+    // Array mit den Pfaden zu den Hintergrundbildern
+    const backgrounds = [
+        'hintergrund1.png',
+        'hintergrund2.png',
+        'hintergrund3.png',
+        'hintergrund4.png',
+        'hintergrund5.png',
+        'hintergrund6.png'
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+        // Hintergrundbild ändern
+        document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
+        // Index für das nächste Bild aktualisieren
+        index = (index + 1) % backgrounds.length;
+    }
+
+    // Hintergrundbild alle 5 Sekunden wechseln
+    setInterval(changeBackground, 5000);
+
+    // Initiales Hintergrundbild setzen
+    changeBackground();
+</script>
+<div class="content">
+    <h1>Willkommen auf meiner Webseite!</h1>
+    <p>Einblicke in das Leben von Monika Ernst und ihre Welt – eine Plattform für Familie, Freunde und Inspiration.</p>
+</div>
 <body>
     <header>
         <h1>Willkommen auf Monika Ernsts Webseite!</h1>
