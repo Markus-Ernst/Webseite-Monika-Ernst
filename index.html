@@ -423,3 +423,93 @@
 </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hintergrundbild-Diashow</title>
+    <style>
+        /* Allgemeines Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Slideshow-Container */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Slideshow-Bilder */
+        .slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Aktives Bild */
+        .slideshow img.active {
+            opacity: 1;
+        }
+
+        /* Optional: Text oder Inhalt über der Slideshow */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow">
+    <!-- Bilder für die Slideshow -->
+    <img src="https://via.placeholder.com/1920x1080/ff7f7f/333333?text=Bild+1" alt="Bild 1" class="active">
+    <img src="https://via.placeholder.com/1920x1080/7f7fff/333333?text=Bild+2" alt="Bild 2">
+    <img src="https://via.placeholder.com/1920x1080/7fff7f/333333?text=Bild+3" alt="Bild 3">
+    <img src="https://via.placeholder.com/1920x1080/ffff7f/333333?text=Bild+4" alt="Bild 4">
+
+    <!-- Optionaler Inhalt -->
+    <div class="content">
+        <h1>Willkommen zur Diashow</h1>
+        <p>Beispieltext über die Slideshow</p>
+    </div>
+</div>
+
+<script>
+    // JavaScript für die Diashow
+    const slides = document.querySelectorAll('.slideshow img');
+    let currentIndex = 0;
+
+    function showNextSlide() {
+        // Aktuelles Bild ausblenden
+        slides[currentIndex].classList.remove('active');
+
+        // Zum nächsten Bild wechseln
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        // Nächstes Bild anzeigen
+        slides[currentIndex].classList.add('active');
+    }
+
+    // Wechsel alle 5 Sekunden
+    setInterval(showNextSlide, 5000);
+</script>
+
+</body>
+</html>
