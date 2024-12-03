@@ -317,26 +317,7 @@
   </header>
   <div class="video">
     <h2>Ein Familienvideo</h2>
-    <!-- YouTube Embed -->
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Video</title>
-</head>
-<body>
-  <div>
-    <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/51t3fTR1jd8" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
-  </div>
-</body>
-</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -344,6 +325,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Video Gallery</title>
     <style>
+        /* Allgemeine Stile */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -351,58 +333,7 @@
             background-color: #f4f4f4;
         }
         header {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-        }
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .video-container iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>YouTube Video Gallery</h1>
-</header>
-
-<div class="video-container">
-    <iframe src="https://www.youtube.com/embed/TJHo6fOnz7o" title="Video 1"></iframe>
-    <iframe src="https://www.youtube.com/embed/kAiGHJcTJTg" title="Video 2"></iframe>
-    <iframe src="https://www.youtube.com/embed/5OrIfYucRSk" title="Video 3"></iframe>
-    <iframe src="https://www.youtube.com/embed/MzAiJnXc1xU" title="Video 4"></iframe>
-    <iframe src="https://www.youtube.com/embed/B-v0tzXzxws" title="Video 5"></iframe>
-    <iframe src="https://www.youtube.com/embed/II7_XBxFELw" title="Video 6"></iframe>
-</div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Gallery</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
+            background-color: #333;
             color: #fff;
             text-align: center;
             padding: 1rem;
@@ -418,7 +349,7 @@
             width: 100%;
             max-width: 500px;
             aspect-ratio: 16/9;
-            background: #000;
+            background-color: #000;
         }
         .video-item iframe {
             width: 100%;
@@ -434,21 +365,27 @@
 </header>
 
 <div class="video-container">
+    <!-- Video 1 -->
     <div class="video-item">
         <iframe src="https://www.youtube.com/embed/TJHo6fOnz7o" title="Video 1" allowfullscreen></iframe>
     </div>
+    <!-- Video 2 -->
     <div class="video-item">
         <iframe src="https://www.youtube.com/embed/kAiGHJcTJTg" title="Video 2" allowfullscreen></iframe>
     </div>
+    <!-- Video 3 -->
     <div class="video-item">
         <iframe src="https://www.youtube.com/embed/5OrIfYucRSk" title="Video 3" allowfullscreen></iframe>
     </div>
+    <!-- Video 4 -->
     <div class="video-item">
         <iframe src="https://www.youtube.com/embed/MzAiJnXc1xU" title="Video 4" allowfullscreen></iframe>
     </div>
+    <!-- Video 5 -->
     <div class="video-item">
         <iframe src="https://www.youtube.com/embed/B-v0tzXzxws" title="Video 5" allowfullscreen></iframe>
     </div>
+    <!-- Video 6 -->
     <div class="video-item">
         <iframe src="https://www.youtube.com/embed/II7_XBxFELw" title="Video 6" allowfullscreen></iframe>
     </div>
