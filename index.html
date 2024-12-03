@@ -468,3 +468,91 @@
     }
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up mit Bild</title>
+    <style>
+        /* Grundlegende Stile */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            overflow: hidden; /* Verhindert Scrollen, während das Pop-up sichtbar ist */
+        }
+
+        /* Hintergrundüberlagerung */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Pop-up Container */
+        .popup {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Bild im Pop-up */
+        .popup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Inhalt des Pop-ups */
+        .popup-content {
+            padding: 20px;
+        }
+
+        /* Unsichtbar, wenn nicht aktiv */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Pop-up Overlay -->
+<div class="popup-overlay" id="popup">
+    <div class="popup">
+        <img src="bild1.png" alt="Pop-up Bild">
+        <div class="popup-content">
+            <p>Willkommen auf unserer Seite!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Inhalt der Seite -->
+<div class="content">
+    <h1>Seiteninhalt</h1>
+    <p>Hier erscheint der Hauptinhalt nach dem Pop-up.</p>
+</div>
+
+<script>
+    // Pop-up automatisch schließen nach 10 Sekunden
+    const popup = document.getElementById('popup');
+
+    setTimeout(() => {
+        popup.classList.add('hidden'); // Verstecke das Pop-up
+        document.body.style.overflow = 'auto'; // Erlaube Scrollen
+    }, 10000); // 10 Sekunden (10000 Millisekunden)
+</script>
+
+</body>
+</html>
