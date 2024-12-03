@@ -431,3 +431,51 @@
     <title>Hintergrundbild-Diashow</title>
     <style>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wechselnder Hintergrund</title>
+    <style>
+        /* Grundlegendes Seitenlayout */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 200vh; /* Die Seite ist scrollbar */
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Liste der Hintergrundbilder
+    const backgrounds = [
+        'https://via.placeholder.com/1920x1080/ff7f7f/333333?text=Bild+1',
+        'https://via.placeholder.com/1920x1080/7f7fff/333333?text=Bild+2',
+        'https://via.placeholder.com/1920x1080/7fff7f/333333?text=Bild+3',
+        'https://via.placeholder.com/1920x1080/ffff7f/333333?text=Bild+4'
+    ];
+
+    let currentIndex = 0;
+
+    function changeBackground() {
+        // Ändert das Hintergrundbild des `body`
+        document.body.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
+
+        // Zum nächsten Bild wechseln
+        currentIndex = (currentIndex + 1) % backgrounds.length;
+    }
+
+    // Startet den Wechsel alle 5 Sekunden
+    changeBackground();
+    setInterval(changeBackground, 5000);
+</script>
+
+</body>
+</html>
