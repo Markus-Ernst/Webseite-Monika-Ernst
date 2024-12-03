@@ -431,3 +431,71 @@
     <title>Hintergrundbild-Diashow</title>
     <style>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wechselnder Hintergrund</title>
+    <style>
+        /* Grundlegende Stile */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out;
+        }
+
+        /* Inhalt der Seite */
+        .content {
+            height: 200vh; /* Seite ist doppelt so hoch wie die Viewport-Höhe */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        h1, p {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Willkommen auf meiner Seite</h1>
+    <p>Der Hintergrund wechselt automatisch, und die Seite ist scrollbar.</p>
+</div>
+
+<script>
+    // Array mit Hintergrundbildern
+    const backgrounds = [
+        'https://via.placeholder.com/1920x1080/ff7f7f/333333?text=Bild+1',
+        'https://via.placeholder.com/1920x1080/7f7fff/333333?text=Bild+2',
+        'https://via.placeholder.com/1920x1080/7fff7f/333333?text=Bild+3',
+        'https://via.placeholder.com/1920x1080/ffff7f/333333?text=Bild+4'
+    ];
+
+    let currentIndex = 0;
+
+    function changeBackground() {
+        // Ändert das Hintergrundbild des `body`
+        document.body.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
+
+        // Gehe zum nächsten Bild
+        currentIndex = (currentIndex + 1) % backgrounds.length;
+    }
+
+    // Starte den Wechsel alle 5 Sekunden
+    changeBackground();
+    setInterval(changeBackground, 5000);
+</script>
+
+</body>
+</html>
