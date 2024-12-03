@@ -605,3 +605,113 @@
 
 </body>
 </html>
+
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up mit Bild</title>
+    <style>
+        /* Grundlegende Stile */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Pop-up Overlay */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Pop-up */
+        .popup {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Bild im Pop-up */
+        .popup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Pop-up-Inhalt */
+        .popup-content {
+            padding: 20px;
+        }
+
+        /* Schließen-Button */
+        .close-btn {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-btn:hover {
+            background: #e60000;
+        }
+
+        /* Unsichtbares Pop-up */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Pop-up Overlay -->
+<div class="popup-overlay" id="popup">
+    <div class="popup">
+        <img src="bild1.png" alt="Pop-up Bild">
+        <div class="popup-content">
+            <p>Willkommen auf unserer Seite!</p>
+            <button class="close-btn" id="closeButton">Schließen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Seiteninhalt -->
+<div class="content">
+    <h1>Hauptinhalt der Seite</h1>
+    <p>Dies ist der normale Seiteninhalt, der nach dem Pop-up sichtbar ist.</p>
+</div>
+
+<script>
+    // Referenzen für das Pop-up und den Button
+    const popup = document.getElementById('popup');
+    const closeButton = document.getElementById('closeButton');
+
+    // Schließt das Pop-up nach 10 Sekunden automatisch
+    setTimeout(() => {
+        popup.classList.add('hidden');
+    }, 10000);
+
+    // Schließt das Pop-up manuell bei Klick auf den Button
+    closeButton.addEventListener('click', () => {
+        popup.classList.add('hidden');
+    });
+</script>
+
+</body>
+</html>
