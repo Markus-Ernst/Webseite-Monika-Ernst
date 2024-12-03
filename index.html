@@ -454,12 +454,7 @@
 <body>
 
 <script>
-    // Liste der Hintergrundbilder
-    const backgrounds = [
-        'https://via.placeholder.com/1920x1080/ff7f7f/333333?text=Bild+1',
-        'https://via.placeholder.com/1920x1080/7f7fff/333333?text=Bild+2',
-        'https://via.placeholder.com/1920x1080/7fff7f/333333?text=Bild+3',
-        'https://via.placeholder.com/1920x1080/ffff7f/333333?text=Bild+4'
+
     ];
 
     let currentIndex = 0;
@@ -471,11 +466,5 @@
         // Zum nächsten Bild wechseln
         currentIndex = (currentIndex + 1) % backgrounds.length;
     }
-
-    // Startet den Wechsel alle 5 Sekunden
-    changeBackground();
-    setInterval(changeBackground, 5000);
-</script>
-
 </body>
 </html>
